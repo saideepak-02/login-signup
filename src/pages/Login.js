@@ -8,8 +8,10 @@ function Login() {
     const handleLogin = (e) => {
         e.preventDefault();
 
-            localStorage.setItem(data.email, JSON.stringify(data))
-            navigate('/Dashboard');
+        const data = JSON.parse(localStorage.getItem('email'));
+        console.log(data);
+        if(data )
+        navigate('/Dashboard');
     }
 
     const handleChange = (e) => {
