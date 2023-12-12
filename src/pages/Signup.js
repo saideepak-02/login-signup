@@ -8,9 +8,10 @@ function Signup(){
     const [data, setData] = useState({ email:"", password: "" });
     const handleSignup = (e) => {
         e.preventDefault();
-        console.log(data)
-            const data=JSON.parse(localStorage.getItem(data.email));
-            if(data){
+       
+            const user=JSON.parse(localStorage.getItem(data.email));
+            console.log(user)
+            if(user){
                 alert("user already exist");
                 return 0;
             }
@@ -25,7 +26,7 @@ function Signup(){
                 [e.target.name]: e.target.value
             }
         })
-        console.log(data)
+       
     }
 
     return(

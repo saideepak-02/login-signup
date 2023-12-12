@@ -4,13 +4,13 @@ import { useState } from "react";
 
 function Login() {
     const navigate = useNavigate();
-    const [data, setData] = useState({ email: "", password: "" });
+    const [data, setData] = useState({ email:"", password:"" });
     const handleLogin = (e) => {
         e.preventDefault();
 
-        const data = JSON.parse(localStorage.getItem('email'));
-        console.log(data);
-        if(data )
+        const user = JSON.parse(localStorage.getItem(data.email));
+        console.log(user);
+        if(user)
         navigate('/Dashboard');
     }
 
